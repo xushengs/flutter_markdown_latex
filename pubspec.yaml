@@ -1,5 +1,5 @@
 name: flutter_markdown_latex
-description: This extension is created to enhance the functionality of the flutter_markdown package by adding support for rendering LaTeX in markdown. The rendering of LaTeX is achieved through the utilization of the flutter_math_fork package.
+description: A extension to render LaTeX in markdown for package flutter_markdown.
 version: 0.1.1
 homepage: https://github.com/xushengs/flutter_markdown_latex
 
