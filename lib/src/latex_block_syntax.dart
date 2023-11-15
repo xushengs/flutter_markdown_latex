@@ -29,7 +29,9 @@ class LatexBlockSyntax extends BlockSyntax {
   Node parse(BlockParser parser) {
     final lines = parseChildLines(parser);
     final content = lines.map((e) => e.content).join('\n');
-    final element = Element('p', [Element.text('latex', content)]);
+    final textElement = Element.text('latex', content);
+    textElement.attributes['displayMode'] = 'true';
+    final element = Element('p', [textElement]);
     element.attributes['displayMode'] = 'true';
     return element;
   }
