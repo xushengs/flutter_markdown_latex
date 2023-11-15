@@ -6,6 +6,8 @@ import 'package:markdown/markdown.dart' as md;
 
 import 'package:flutter_markdown_latex/flutter_markdown_latex.dart';
 
+import 'golden_diff_comparator.dart';
+
 final snapshots = {
   'readme example': 'latex: \$c = \\pm\\sqrt{a^2 + b^2}\$',
   'inline latex': '''
@@ -130,6 +132,18 @@ void main() {
               ),
             ),
           ),
+        );
+
+        final testUrl = (goldenFileComparator as LocalFileComparator).basedir;
+        goldenFileComparator = GoldenDiffComparator(
+          // flutter_test's LocalFileComparator expects the test's URI to be passed
+          // as an argument, but it only uses it to parse the baseDir in order to
+          // obtain the directory where the golden tests will be placed.
+          // As such, we use the default `testUrl`, which is only the `baseDir` and
+          // append a generically named `test.dart` so that the `baseDir` is
+          // properly extracted.
+          Uri.parse('$testUrl/test.dart'),
+          tolerance: 0.01,
         );
 
         await expectLater(
