@@ -16,7 +16,7 @@ jobs:
       with:
         flutter-version: '3.13.9'
         channel: 'stable'
-    - run: flutter test -coverage
+    - run: flutter test --coverage
         
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.2.3
