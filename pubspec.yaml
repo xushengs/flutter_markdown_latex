@@ -1,7 +1,7 @@
 name: flutter_markdown_latex
 description: A new Flutter package project.
-version: 0.0.1
-homepage:
+version: 0.1.0
+homepage: https://github.com/xushengs/flutter_markdown_latex
 
 environment:
   sdk: '>=3.1.5 <4.0.0'
