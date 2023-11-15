@@ -89,17 +89,19 @@ This is inline latex with displayMode: \$\$f(x) = \\sum_{i=0}^{n} \\frac{a_i}{1+
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: MarkdownBody(
-        selectable: true,
-        data: text,
-        builders: {
-          'latex': LatexElementBuilder(),
-        },
-        extensionSet: md.ExtensionSet(
-          [LatexBlockSyntax()],
-          [LatexInlineSyntax()],
-        ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: MarkdownBody(
+            selectable: true,
+            data: text,
+            builders: {
+              'latex': LatexElementBuilder(),
+            },
+            extensionSet: md.ExtensionSet(
+              [LatexBlockSyntax()],
+              [LatexInlineSyntax()],
+            ),
+          )), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
