@@ -124,6 +124,9 @@ void main() {
                   [LatexBlockSyntax()],
                   [LatexInlineSyntax()],
                 ),
+                styleSheet: MarkdownStyleSheet(
+                  p: const TextStyle(fontSize: 16, fontFamily: 'FlutterTest'),
+                ),
               ),
             ),
           ),
