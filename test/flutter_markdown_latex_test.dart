@@ -9,78 +9,78 @@ import 'package:markdown/markdown.dart' as md;
 import 'package:flutter_markdown_latex/flutter_markdown_latex.dart';
 
 final snapshots = {
-  'readme example': 'katex: \$c = \\pm\\sqrt{a^2 + b^2}\$',
-  'inline katex': '''
-This is inline katex: \$c = \\pm\\sqrt{a^2 + b^2}\$
+  'readme example': 'latex: \$c = \\pm\\sqrt{a^2 + b^2}\$',
+  'inline latex': '''
+This is inline latex: \$c = \\pm\\sqrt{a^2 + b^2}\$
 ''',
-  'block katex': '''
-This is block level katex:
+  'block latex': '''
+This is block level latex:
 
 \$\$
 c = \\pm\\sqrt{a^2 + b^2}
 \$\$
 ''',
-  'inline katex more \$': '''
-This is inline katex with displayMode: \$\$c = \\pm\\sqrt{a^2 + b^2}\$\$
+  'inline latex more \$': '''
+This is inline latex with displayMode: \$\$c = \\pm\\sqrt{a^2 + b^2}\$\$
 ''',
-  'inline katex 3 \$': '''
-This is not inline katex: \$\$\$c = \\pm\\sqrt{a^2 + b^2}\$\$\$
+  'inline latex 3 \$': '''
+This is not inline latex: \$\$\$c = \\pm\\sqrt{a^2 + b^2}\$\$\$
 ''',
-  'block katex more \$': '''
-This is not katex:
+  'block latex more \$': '''
+This is not latex:
 
 \$\$\$
 c = \\pm\\sqrt{a^2 + b^2}
 \$\$\$
 ''',
-  'block katex 1 \$': '''
-This is block level katex:
+  'block latex 1 \$': '''
+This is block level latex:
 
 \$
 c = \\pm\\sqrt{a^2 + b^2}
 \$
 ''',
-  'not katex': 'not katex \$300 \$400',
-  'not katex at beginning': '\$300 \$400 not katex',
-  'not katex at end': 'not katex 300\$ 400\$',
-  'block katex with \$ inside': '''
+  'not latex': 'not latex \$300 \$400',
+  'not latex at beginning': '\$300 \$400 not latex',
+  'not latex at end': 'not latex 300\$ 400\$',
+  'block latex with \$ inside': '''
 \$\$
 \\colorbox{aqua}{\$
 \\frac{b}{2}\\sqrt{a^2-\\frac{b^2}{4}}
 a\$}
 \$\$
 ''',
-  'inline katex with \$ inside':
-      'this is inline katex: \$a\\raisebox{0.25em}{\$b\$}c\$',
-  'inline katex with a question mark after': 'this is inline katex: \$x\$?',
-  'inline katex with an exclamation mark after': 'this is inline katex: \$x\$!',
-  'inline katex with a period after': 'this is inline katex: \$x\$.',
-  'inline katex with a comma after': 'this is inline katex: \$x\$,',
-  'inline katex with a colon after': 'this is inline katex: \$x\$:',
-  'inline katex \$\$...\$':
-      'this is not katex: \$\$a\\raisebox{0.25em}{\$b\$}c\$',
-  'inline katex \$...\$\$':
-      'this is not katex: \$a\\raisebox{0.25em}{\$b\$}c\$\$',
-  'slash \$': 'must include space between katex and end delimiter: \$ \\\$ \$',
+  'inline latex with \$ inside':
+      'this is inline latex: \$a\\raisebox{0.25em}{\$b\$}c\$',
+  'inline latex with a question mark after': 'this is inline latex: \$x\$?',
+  'inline latex with an exclamation mark after': 'this is inline latex: \$x\$!',
+  'inline latex with a period after': 'this is inline latex: \$x\$.',
+  'inline latex with a comma after': 'this is inline latex: \$x\$,',
+  'inline latex with a colon after': 'this is inline latex: \$x\$:',
+  'inline latex \$\$...\$':
+      'this is not latex: \$\$a\\raisebox{0.25em}{\$b\$}c\$',
+  'inline latex \$...\$\$':
+      'this is not latex: \$a\\raisebox{0.25em}{\$b\$}c\$\$',
+  'slash \$': 'must include space between latex and end delimiter: \$ \\\$ \$',
   'block slash \$': '''
-this is block katex:
+this is block latex:
 
 \$\$
 \\\$\\\$
 \$\$
 ''',
-  'inline katex with newline': '''
-this is not katex: \$
+  'inline latex with newline': '''
+this is not latex: \$
 c = \\pm\\sqrt{a^2 + b^2}
 \$
 ''',
-  'multiple inline katex \$': '''
-this is katex: **pi:** \$\\pi\$ **theta:** \$\\theta\$
+  'multiple inline latex \$': '''
+this is latex: **pi:** \$\\pi\$ **theta:** \$\\theta\$
 ''',
-  'multiple inline katex \$\$': '''
-this is katex: **pi:** \$\$\\pi\$\$ **theta:** \$\$\\theta\$\$
+  'multiple inline latex \$\$': '''
+this is latex: **pi:** \$\$\\pi\$\$ **theta:** \$\$\\theta\$\$
 ''',
-  'multiple block katex \$': '''
+  'multiple block latex \$': '''
 # pi:
 
 \$
@@ -93,7 +93,7 @@ this is katex: **pi:** \$\$\\pi\$\$ **theta:** \$\$\\theta\$\$
 \\theta
 \$
 ''',
-  'multiple block katex \$\$': '''
+  'multiple block latex \$\$': '''
 # pi:
 
 \$\$
