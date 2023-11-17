@@ -23,9 +23,16 @@ jobs:
         with:
           flutter-version: '3.13.9'
           channel: 'stable'
-          
-      - name: Publish Dart/Flutter package
-        uses: sakebook/actions-flutter-pub-publisher@v1.4.1
+      
+      - name: Dart and Flutter Package Publisher
+        uses: k-paxian/dart-package-publisher@v1.6
         with:
-          credential: ${{ secrets.CREDENTIAL_JSON }}
-          skip_test: true
+          # (Required) Token from ~/.pub-cache/credentials.json. Use secrets.OAUTH_ACCESS_TOKEN
+          accessToken: ${{ secrets.OAUTH_ACCESS_TOKEN }}
+          # (Required) Token from ~/.pub-cache/credentials.json. Use secrets.OAUTH_REFRESH_TOKEN
+          refreshToken: ${{ secrets.OAUTH_REFRESH_TOKEN }}
+          skipTests: true
+          format: true
+          force: false
+          # (Optional) Flutter branch to use, stable, master, main, dev, etc.
+          flutterBranch: stable
