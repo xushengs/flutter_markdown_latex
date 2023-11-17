@@ -4,6 +4,10 @@ import 'package:flutter_math_fork/flutter_math.dart';
 import 'package:markdown/markdown.dart' as md;
 
 class LatexElementBuilder extends MarkdownElementBuilder {
+  TextStyle? textStyle;
+
+  LatexElementBuilder({this.textStyle});
+
   @override
   Widget visitElementAfterWithContext(BuildContext context, md.Element element,
       TextStyle? preferredStyle, TextStyle? parentStyle) {
@@ -16,7 +20,7 @@ class LatexElementBuilder extends MarkdownElementBuilder {
     return Math.tex(
       text,
       mathStyle: displayMode == 'true' ? MathStyle.display : MathStyle.text,
-      textStyle: Theme.of(context).textTheme.bodyLarge,
+      textStyle: textStyle,
     );
   }
 }

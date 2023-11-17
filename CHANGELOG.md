@@ -1,7 +1,13 @@
+# Change Log
+
+## 0.1.2
+
+* Add LaTeX text style supports.
+
 ## 0.1.1
 
-* update package description.
-* update readme
+* Update package description.
+* Update readme.
 
 ## 0.1.0
 

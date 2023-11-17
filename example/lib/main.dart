@@ -95,7 +95,9 @@ This is inline latex with displayMode: \$\$f(x) = \\sum_{i=0}^{n} \\frac{a_i}{1+
             selectable: true,
             data: text,
             builders: {
-              'latex': LatexElementBuilder(),
+              'latex': LatexElementBuilder(
+                textStyle: const TextStyle(color: Colors.blue),
+              ),
             },
             extensionSet: md.ExtensionSet(
               [LatexBlockSyntax()],
