@@ -3,12 +3,26 @@ name: Publish to pub.dev
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+*'
+    # Must align with the tag-pattern configured on pub.dev.
+    - 'v[0-9]+.[0-9]+.[0-9]+*'
 
 jobs:
   publish:
+    name: Publish
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
     permissions:
-      id-token: write # Required for authentication using OIDC
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
-    # with:
-    #   working-directory: path/to/package/within/repository
+      id-token: write # Allows to publish to pub.dev without personal credentials
+
+    steps:
+    
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+  
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.13.9'
+          channel: 'stable'
+      - run: flutter pub get
+      - run: flutter pub publish --dry-run
+      - run: flutter packages pub publish --server=https://pub.dartlang.org --force
