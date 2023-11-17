@@ -36,11 +36,27 @@ import 'package:flutter_markdown_latex/flutter_markdown_latex.dart';
 ### Render it
 
 ```dart
+// with default text style
 MarkdownBody(
   selectable: true,
   data: 'latex: \$c = \\pm\\sqrt{a^2 + b^2}\$',
   builders: {
     'latex': LatexElementBuilder(),
+  },
+  extensionSet: md.ExtensionSet(
+    [LatexBlockSyntax()],
+    [LatexInlineSyntax()],
+  ),
+),
+
+// with custom text style
+MarkdownBody(
+  selectable: true,
+  data: 'latex: \$c = \\pm\\sqrt{a^2 + b^2}\$',
+  builders: {
+    'latex': LatexElementBuilder(
+      textStyle: const TextStyle(color: Colors.blue),
+    ),
   },
   extensionSet: md.ExtensionSet(
     [LatexBlockSyntax()],
