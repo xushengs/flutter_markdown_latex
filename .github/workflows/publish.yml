@@ -23,6 +23,9 @@ jobs:
         with:
           flutter-version: '3.13.9'
           channel: 'stable'
-      - run: flutter pub get
-      - run: flutter pub publish --dry-run
-      - run: flutter packages pub publish --server=https://pub.dartlang.org --force
+          
+      - name: Publish Dart/Flutter package
+        uses: sakebook/actions-flutter-pub-publisher@v1.4.1
+        with:
+          credential: ${{ secrets.CREDENTIAL_JSON }}
+          skip_test: true
