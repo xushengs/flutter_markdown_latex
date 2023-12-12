@@ -2,7 +2,6 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/xushengs/flutter_markdown_latex/badge.svg?branch=main)](https://coveralls.io/github/xushengs/flutter_markdown_latex?branch=main) [![Pub Version](https://img.shields.io/pub/v/flutter_markdown_latex)](https://pub.dev/packages/flutter_markdown_latex)
 
-
 This extension is created to enhance the functionality of the [flutter_markdown](https://pub.dev/packages/flutter_markdown) package by adding support for rendering LaTeX in markdown. The rendering of LaTeX is achieved through the utilization of the [flutter_math_fork](https://pub.dev/packages/flutter_math_fork) package.
 
 ## Rendering Samples
