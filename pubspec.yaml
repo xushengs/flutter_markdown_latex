@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_markdown: ^0.6.18+2
+  flutter_markdown: ^0.6.18+3
   flutter_math_fork: ^0.7.2
   markdown: ^7.1.1
 
