@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+
+* Support for block delimiters '[]' and inline delimiters '()' in the responses returned by OpenAI.
+
 ## 0.1.4
 
 * Update flutter_markdown to 0.6.18+3
