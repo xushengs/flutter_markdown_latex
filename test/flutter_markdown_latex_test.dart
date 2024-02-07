@@ -116,6 +116,7 @@ void main() {
         await tester.pumpWidget(
           MaterialApp(
             home: Scaffold(
+              backgroundColor: Colors.white,
               body: MarkdownBody(
                 selectable: true,
                 data: value,
@@ -127,7 +128,8 @@ void main() {
                   [LatexInlineSyntax()],
                 ),
                 styleSheet: MarkdownStyleSheet(
-                  p: const TextStyle(fontSize: 16, fontFamily: 'FlutterTest'),
+                  p: const TextStyle(
+                      fontSize: 16, fontFamily: 'FlutterTest', height: 1),
                 ),
               ),
             ),
