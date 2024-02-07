@@ -105,7 +105,15 @@ this is latex: **pi:** \$\$\\pi\$\$ **theta:** \$\$\\theta\$\$
 \$\$
 \\theta
 \$\$
-'''
+''',
+  'OpenAI inline latex': '''
+OpenAI inline latex \\( f(x) = \\sum_{i=0}^{n} \\frac{a_i}{1+x} \\)
+''',
+  'OpenAI block latex': '''
+OpenAI block latex:
+
+\\[ c = \\pm\\sqrt{a^2 + b^2} \\]
+''',
 };
 
 void main() {

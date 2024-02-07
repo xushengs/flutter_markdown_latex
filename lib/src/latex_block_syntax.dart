@@ -10,13 +10,11 @@ class LatexBlockSyntax extends BlockSyntax {
   @override
   List<Line> parseChildLines(BlockParser parser) {
     final m = pattern.firstMatch(parser.current.content);
-    if (m == null) {
-      return [];
-    }
-    if (m[2] != null) {
+    if (m?[2] != null) {
       parser.advance();
-      return [Line(m[2] ?? '')];
+      return [Line(m?[2] ?? '')];
     }
+
     final childLines = <Line>[];
     parser.advance();
 
