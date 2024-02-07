@@ -69,6 +69,16 @@ c = \\pm\\sqrt{a^2 + b^2}
 
 This is inline latex with displayMode: \$\$f(x) = \\sum_{i=0}^{n} \\frac{a_i}{1+x}\$\$
 
+To calculate the area of an equilateral triangle using trigonometric functions, one can consider using the length of the side and the height. The relationship between the height and the side length of an equilateral triangle is:
+
+\\[ \\text{Height} = \\frac{\\sqrt{3}}{2} \\times \\text{Side Length} \\]
+
+因此，边长为 9 的正三角形的面积为：
+
+\\[ \\text{面积} = \\frac{1}{2} \\times \\text{底} \\times \\text{高} = \\frac{1}{2} \\times 9 \\times \\frac{\\sqrt{3}}{2} \\times 9 = \\frac{81\\sqrt{3}}{4} \\]
+
+所以正三角形的面积为 \\( \\frac{81\\sqrt{3}}{4} \\)。
+
 ''';
 
   @override
