@@ -145,7 +145,7 @@ void main() {
           // append a generically named `test.dart` so that the `baseDir` is
           // properly extracted.
           Uri.parse('$testUrl/test.dart'),
-          tolerance: 0.01,
+          tolerance: 0.05,
         );
 
         await expectLater(

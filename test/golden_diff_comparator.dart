@@ -8,7 +8,7 @@ class GoldenDiffComparator extends LocalFileComparator {
 
   GoldenDiffComparator(
     Uri testFile, {
-    this.tolerance = 0.05,
+    this.tolerance = 0.005,
   }) : super(testFile);
 
   @override
