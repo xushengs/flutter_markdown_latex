@@ -18,7 +18,6 @@ class LatexInlineSyntax extends InlineSyntax {
     }
 
     final element = Element.text('latex', equation);
-    element.attributes['displayMode'] = equation;
     parser.addNode(element);
 
     return true;
