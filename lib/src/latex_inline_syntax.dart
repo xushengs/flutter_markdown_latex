@@ -18,6 +18,7 @@ class LatexInlineSyntax extends InlineSyntax {
     }
 
     final element = Element.text('latex', equation);
+    element.attributes['MathStyle'] = 'text';
     parser.addNode(element);
 
     return true;

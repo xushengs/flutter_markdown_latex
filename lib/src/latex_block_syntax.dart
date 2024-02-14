@@ -39,6 +39,7 @@ class LatexBlockSyntax extends BlockSyntax {
     final lines = parseChildLines(parser);
     final content = lines.map((e) => e.content).join('\n').trim();
     final textElement = Element.text('latex', content);
+    textElement.attributes['MathStyle'] = 'display';
 
     return Element('p', [textElement]);
   }

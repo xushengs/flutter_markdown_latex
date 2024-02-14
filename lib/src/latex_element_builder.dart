@@ -3,13 +3,10 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 import 'package:markdown/markdown.dart' as md;
 
-export 'package:flutter_math_fork/flutter_math.dart' show MathStyle;
-
 class LatexElementBuilder extends MarkdownElementBuilder {
   LatexElementBuilder({
     this.textStyle,
     this.textScaleFactor,
-    this.mathStyle = MathStyle.display,
   });
 
   /// The style to apply to the text.
@@ -17,9 +14,6 @@ class LatexElementBuilder extends MarkdownElementBuilder {
 
   /// The text scale factor to apply to the text.
   final double? textScaleFactor;
-
-  /// Math styles for equation elements.
-  final MathStyle mathStyle;
 
   @override
   Widget visitElementAfterWithContext(
@@ -31,6 +25,16 @@ class LatexElementBuilder extends MarkdownElementBuilder {
     final String text = element.textContent;
     if (text.isEmpty) {
       return const SizedBox();
+    }
+
+    MathStyle mathStyle;
+    switch (element.attributes['MathStyle']) {
+      case 'text':
+        mathStyle = MathStyle.text;
+      case 'display':
+        mathStyle = MathStyle.display;
+      default:
+        mathStyle = MathStyle.text;
     }
 
     return Math.tex(
