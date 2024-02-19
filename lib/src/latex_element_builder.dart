@@ -5,8 +5,9 @@ import 'package:markdown/markdown.dart' as md;
 
 class LatexElementBuilder extends MarkdownElementBuilder {
   TextStyle? textStyle;
+  bool selectable;
 
-  LatexElementBuilder({this.textStyle});
+  LatexElementBuilder({this.textStyle, this.selectable = false});
 
   @override
   Widget visitElementAfterWithContext(BuildContext context, md.Element element,
@@ -17,10 +18,18 @@ class LatexElementBuilder extends MarkdownElementBuilder {
       return const SizedBox();
     }
 
-    return Math.tex(
-      text,
-      mathStyle: displayMode == 'true' ? MathStyle.display : MathStyle.text,
-      textStyle: textStyle,
-    );
+    final mathStyle =
+        displayMode == 'true' ? MathStyle.display : MathStyle.text;
+    return selectable
+        ? SelectableMath.tex(
+            text,
+            mathStyle: mathStyle,
+            textStyle: textStyle,
+          )
+        : Math.tex(
+            text,
+            mathStyle: mathStyle,
+            textStyle: textStyle,
+          );
   }
 }
