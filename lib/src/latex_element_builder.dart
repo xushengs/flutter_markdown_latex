@@ -37,11 +37,14 @@ class LatexElementBuilder extends MarkdownElementBuilder {
         mathStyle = MathStyle.text;
     }
 
-    return Math.tex(
-      text,
-      textStyle: textStyle,
-      mathStyle: mathStyle,
-      textScaleFactor: textScaleFactor,
-    );
+    return Text.rich(WidgetSpan(
+      alignment: PlaceholderAlignment.middle,
+      child: SelectableMath.tex(
+        text,
+        textStyle: textStyle,
+        mathStyle: mathStyle,
+        textScaleFactor: textScaleFactor,
+      ),
+    ));
   }
 }
