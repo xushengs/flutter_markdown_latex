@@ -23,7 +23,7 @@ class LatexInlineSyntax extends InlineSyntax {
     if (raw.startsWith('\$\$') && raw.endsWith('\$\$')) {
       mathStyle = 'display';
     } else {
-      mathStyle = 'inline';
+      mathStyle = 'text';
     }
 
     final element = Element.text('latex', equation);
