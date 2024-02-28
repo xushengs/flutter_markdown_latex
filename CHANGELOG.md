@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0
+
+* Added support for text scaling using the textScaleFactor.
+* Resolved issue with inline Latex display appearing on a new line within long text.
+
 ## 0.2.0
 
 * Support for block delimiters '[]' and inline delimiters '()' in the responses returned by OpenAI.
