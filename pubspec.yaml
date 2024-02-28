@@ -10,13 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-#  flutter_markdown: ^0.6.18+3
+  flutter_markdown: ^0.6.18+3
   flutter_math_fork: ^0.7.2
   markdown: ^7.1.1
-  flutter_markdown:
-    git:
-      url: https://github.com/pzierahn/flutter_packages.git
-      path: packages/flutter_markdown
+  # flutter_markdown:
+  #   git:
+  #     url: https://github.com/pzierahn/flutter_packages.git
+  #     path: packages/flutter_markdown
 
 
 dev_dependencies:
