@@ -17,8 +17,17 @@ class LatexInlineSyntax extends InlineSyntax {
       return false;
     }
 
+    String raw = match.group(0) ?? '';
+
+    String mathStyle;
+    if (raw.startsWith('\$\$') && raw.endsWith('\$\$')) {
+      mathStyle = 'display';
+    } else {
+      mathStyle = 'inline';
+    }
+
     final element = Element.text('latex', equation);
-    element.attributes['MathStyle'] = 'text';
+    element.attributes['MathStyle'] = mathStyle;
     parser.addNode(element);
 
     return true;
