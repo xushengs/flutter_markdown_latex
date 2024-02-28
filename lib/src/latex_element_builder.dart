@@ -4,23 +4,47 @@ import 'package:flutter_math_fork/flutter_math.dart';
 import 'package:markdown/markdown.dart' as md;
 
 class LatexElementBuilder extends MarkdownElementBuilder {
-  TextStyle? textStyle;
+  LatexElementBuilder({
+    this.textStyle,
+    this.textScaleFactor,
+  });
 
-  LatexElementBuilder({this.textStyle});
+  /// The style to apply to the text.
+  final TextStyle? textStyle;
+
+  /// The text scale factor to apply to the text.
+  final double? textScaleFactor;
 
   @override
-  Widget visitElementAfterWithContext(BuildContext context, md.Element element,
-      TextStyle? preferredStyle, TextStyle? parentStyle) {
-    final String? displayMode = element.attributes['displayMode'];
+  Widget visitElementAfterWithContext(
+    BuildContext context,
+    md.Element element,
+    TextStyle? preferredStyle,
+    TextStyle? parentStyle,
+  ) {
     final String text = element.textContent;
     if (text.isEmpty) {
       return const SizedBox();
     }
 
-    return Math.tex(
-      text,
-      mathStyle: displayMode == 'true' ? MathStyle.display : MathStyle.text,
-      textStyle: textStyle,
-    );
+    MathStyle mathStyle;
+    switch (element.attributes['MathStyle']) {
+      case 'text':
+        mathStyle = MathStyle.text;
+      case 'display':
+        mathStyle = MathStyle.display;
+      default:
+        mathStyle = MathStyle.text;
+    }
+
+    return Text.rich(WidgetSpan(
+      alignment: PlaceholderAlignment.middle,
+      child: SelectableMath.tex(
+        text,
+        textStyle: textStyle,
+        mathStyle: mathStyle,
+        textScaleFactor: textScaleFactor,
+      ),
+    ));
   }
 }

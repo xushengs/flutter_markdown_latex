@@ -2,8 +2,10 @@ import 'package:markdown/markdown.dart';
 
 class LatexBlockSyntax extends BlockSyntax {
   @override
-  RegExp get pattern =>
-      RegExp(r'^(\${1,2})|(?:\\\[(.+)\\\])$', multiLine: true);
+  RegExp get pattern => RegExp(
+        r'^(\${1,2})|(?:\\\[(.+)\\\])$',
+        multiLine: true,
+      );
 
   LatexBlockSyntax() : super();
 
@@ -35,11 +37,10 @@ class LatexBlockSyntax extends BlockSyntax {
   @override
   Node parse(BlockParser parser) {
     final lines = parseChildLines(parser);
-    final content = lines.map((e) => e.content).join('\n');
+    final content = lines.map((e) => e.content).join('\n').trim();
     final textElement = Element.text('latex', content);
-    textElement.attributes['displayMode'] = 'true';
-    final element = Element('p', [textElement]);
-    element.attributes['displayMode'] = 'true';
-    return element;
+    textElement.attributes['MathStyle'] = 'display';
+
+    return Element('p', [textElement]);
   }
 }
