@@ -55,6 +55,7 @@ MarkdownBody(
   builders: {
     'latex': LatexElementBuilder(
       textStyle: const TextStyle(color: Colors.blue),
+      textScaleFactor: 1.2,
     ),
   },
   extensionSet: md.ExtensionSet(
