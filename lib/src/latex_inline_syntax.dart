@@ -1,7 +1,7 @@
 import 'package:markdown/markdown.dart';
 
 const _latexPattern =
-    r'(\\\$|(?<!\\)\${1,2}|\\(?:\(|\[))(.*?)(\\(?:\)|\])|(?<!\\)\${1,2})';
+    r'(?:(\${1,2})(?!\$)((?:\\.|[^\\\n])*?(?:\\.|[^\\\n\$]))\1(?=[\s?!\.,:？！。，：]|$))|(?:(\\\()(?!\\\))((?:\\.|[^\\\n])*?(?:\\.|[^\\\n\\\)]))\\\)(?=[\s?!\.,:？！。，：]|$))';
 
 class LatexInlineSyntax extends InlineSyntax {
   LatexInlineSyntax() : super(_latexPattern);
@@ -12,9 +12,9 @@ class LatexInlineSyntax extends InlineSyntax {
       return false;
     }
 
-    final equation = (match[2] ?? '').trim();
+    String equation = (match[2] ?? '').trim();
     if (equation.isEmpty) {
-      return false;
+      equation = (match[4] ?? '').trim();
     }
 
     String raw = match.group(0) ?? '';
