@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1
+
+* Fixed issue with inline LaTeX not rendering properly in OpenAI responses.
+* Addressed problem with long LaTeX expressions exceeding screen width.
+
 ## 0.3.0
 
 * Added support for text scaling using the textScaleFactor.
