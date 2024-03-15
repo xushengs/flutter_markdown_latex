@@ -39,6 +39,7 @@ class LatexElementBuilder extends MarkdownElementBuilder {
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
+      clipBehavior: Clip.antiAlias,
       child: SelectableMath.tex(
         text,
         textStyle: textStyle,
