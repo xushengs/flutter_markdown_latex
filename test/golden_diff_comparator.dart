@@ -7,9 +7,9 @@ class GoldenDiffComparator extends LocalFileComparator {
   final double tolerance;
 
   GoldenDiffComparator(
-    Uri testFile, {
+    super.testFile, {
     this.tolerance = 0.005,
-  }) : super(testFile);
+  });
 
   @override
   Future<bool> compare(Uint8List imageBytes, Uri golden) async {
