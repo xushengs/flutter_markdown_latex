@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2
+
+* Bump flutter_markdown from 0.6.23 to 0.7.1  dependencies
+
 ## 0.3.1
 
 * Fixed issue with inline LaTeX not rendering properly in OpenAI responses.
