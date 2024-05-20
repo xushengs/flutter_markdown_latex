@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3
+
+* Fixed issue with BlockSyntax handling of PHP code
+
 ## 0.3.2
 
 * Bump flutter_markdown from 0.6.23 to 0.7.1  dependencies

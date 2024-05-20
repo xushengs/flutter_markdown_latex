@@ -35,7 +35,7 @@ $$
 c = \pm\sqrt{a^2 + b^2}
 $$
 
-This is inline latex with displayMode: $$f(x) = \sum_{i=0}^{n} \frac{a_i}{1+x}$$
+This is inline latex with displayMode: $$f(x) = \sum_{i=0}^{n} \frac{a_i}{1+x}$$ and here is a very long text that should be in the same line.
 
 The relationship between the height and the side length of an equilateral triangle is:
 
