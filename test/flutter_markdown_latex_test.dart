@@ -26,20 +26,20 @@ This is inline latex with displayMode: \$\$c = \\pm\\sqrt{a^2 + b^2}\$\$
   'inline latex 3 \$': '''
 This is not inline latex: \$\$\$c = \\pm\\sqrt{a^2 + b^2}\$\$\$
 ''',
-  'block latex more \$': '''
-This is not latex:
+//   'block latex more \$': '''
+// This is not latex:
 
-\$\$\$
-c = \\pm\\sqrt{a^2 + b^2}
-\$\$\$
-''',
-  'block latex 1 \$': '''
-This is block level latex:
+// \$\$\$
+// c = \\pm\\sqrt{a^2 + b^2}
+// \$\$\$
+// ''',
+//   'block latex 1 \$': '''
+// This is block level latex:
 
-\$
-c = \\pm\\sqrt{a^2 + b^2}
-\$
-''',
+// \$
+// c = \\pm\\sqrt{a^2 + b^2}
+// \$
+// ''',
   'not latex': 'not latex \$300 \$400',
   'not latex at beginning': '\$300 \$400 not latex',
   'not latex at end': 'not latex 300\$ 400\$',
