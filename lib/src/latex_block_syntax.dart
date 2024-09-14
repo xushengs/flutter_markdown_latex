@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:markdown/markdown.dart';
 
 class LatexBlockSyntax extends BlockSyntax {
@@ -40,7 +38,6 @@ class LatexBlockSyntax extends BlockSyntax {
   Node parse(BlockParser parser) {
     final lines = parseChildLines(parser);
     final content = lines.map((e) => e.content).join('\n').trim();
-    log('content: $content');
     final textElement = Element.text('latex', content);
     textElement.attributes['MathStyle'] = 'display';
 
